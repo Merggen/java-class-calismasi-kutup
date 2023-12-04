@@ -1,0 +1,280 @@
+LibraryItem classı
+
+Nesne :
+LibraryItem book = new Book("Crime and Punishment", new Person("Fyodor", "Dostoyevsky", 1821, 11, 11), "1234567890");
+
+
+Metodlar:
+1.getTitle Metodu
+String title = book.getTitle();
+
+kitabın başlığını döndürür.
+
+Çıktı: "Crime and Punishment"
+
+
+2.int itemID = book.getItemID();
+
+kitabın ID'sini (identification number) döndürür.
+
+Çıktı: 1
+
+
+3.isAvailable Metodu
+boolean available = book.isAvailable();
+
+kitabın olup olmadığını kontrol eder ve kitap varsa true, yopksa false döndürür.
+
+
+4.borrowItem Metodu:
+borrowItem Metodu:
+String borrowMessage = book.borrowItem();
+
+kitabı ödünç almak için kullanılır. Eğer uygunsa "You can borrow this Crime and Punishment" çıktısını verir, aksi halde "You cannot borrow this Crime and Punishment" çıktısını verir.
+
+
+5.returnItem Metodu:
+book.returnItem();
+
+kitabı iade eder ve uygunluk durumunu true yapar.
+
+
+6.borrowItem Metodu:
+String borrowMessageAfterReturn = book.borrowItem();
+
+Kitap iade edildikten sonra tekrar borrowItem metodu çağrıldığında kitabın ödünç alınabilir olduğunu belirten bir mesaj çıktısı alınır.
+
+Çıktı: "You can borrow this Crime and Punishment"
+
+
+7.toString Metodu:
+String itemDetails = book.toString();
+
+kitap bilgilerini ve kitabın uygunluk durumunu içeren bir dize döndürür.
+
+Çıktı: "1 Crime and Punishment available"
+
+********************************************************************************
+ Book Sınıfı
+Nesne Oluşturma:
+Book book = new Book("1984", new Person("George", "Orwell", 1903, 6, 25), "926583928135");
+
+
+Metodlar
+1.getAuthor Metodu
+Person author = book.getAuthor();
+
+kitabın yazarını döndürür.
+
+Çıktı: "George Orwell 25/06/1903"
+
+
+2.getISBN Metodu:
+String isbn = book.getISBN();
+
+kitabın ISBN numarasını döndürür.
+
+Çıktı: "926583928135"
+
+
+3.toString Metodu
+String bookDetails = book.toString();
+
+kitap bilgilerini ve uygunluk durumunu içeren bir dize döndürür.
+
+Çıktı: "1 1984 available George Orwell 25/06/1903 926583928135"
+
+********************************************************************************
+Date Sınıfı
+Nesne Oluşturma:
+Date today = new Date(19, 11, 2023);
+
+Metotlar
+1. getDay Metodu
+int day = date.getDay();
+
+Bu metod günü döndürür.
+
+Çıktı: 15
+
+
+2.getMonth Metodu:
+int month = date.getMonth();
+
+Bu metod ayı döndürür.
+
+Çıktı: 11
+
+
+3.getYear Metodu
+int year = date.getYear();
+
+Bu metod yılı döndürür.
+
+Çıktı: 2022
+
+
+4.toString Metodu
+String dateDetails = date.toString();
+
+Bu metod, tarihi gün ay yıl formatında bir dize olarak döndürür.
+
+Çıktı: "15/11/2022"
+********************************************************************************
+DVD Sınıfı
+DVD myDVD = new DVD("Inception", "Christopher Nolan", 2010, 148);
+
+Bu satırda dvd  adında bir nesne oluşturdum.
+
+
+
+Metodlar:
+
+1.getDirector Metodu
+int duration = myDVD.getDuration();
+
+Bu metod, DVD'nin yönetmenini döndürür.
+
+Çıktı: "Christopher Nolan 30/07/1970"
+
+
+2.getRuntimeMinutes Metodu:
+int runtimeMinutes = dvd.getRuntimeMinutes();
+
+
+DVD'nin çalışma süresini dakika cinsinden döndürür.
+
+
+Çıktı: 148
+
+
+3.toString Metodu
+String dvdDetails = dvd.toString();
+
+DVD bilgilerini ve uygunluk durumunu içeren bir dize döndürür.
+
+Çıktı: "3 Inception available Christopher Nolan 30/07/1970 148 minutes"
+********************************************************************************
+Librarian Sınıfı
+
+Nesne Oluşturma
+Librarian librarian = new Librarian("Tarık", "Yalçın", 16, 08, 2002);
+
+Metodlar:
+
+1.getEmployeeID Metodu
+int employeeID = librarian.getEmployeeID();
+
+kütüphaneciye ait olan çalışan ID'sini döndürür(0 dan başlayarak artıp gidiyo).
+
+Çıktı: 1
+
+
+2.toString Metodu
+String librarianDetails = librarian.toString();
+
+Bu metod, kütüphaneci bilgilerini ve uygunluk durumunu içeren bir dize döndürür.
+
+Çıktı: "Alice Johnson 05/04/1980 1"
+********************************************************************************
+Magazine Sınıfı
+
+Nesne Oluşturma
+Magazine magazine = new Magazine("National Geographic", "May 2023", new Date(1, 5, 2023));
+
+
+Metodlar:
+
+1.getIssueNumber Metodu:
+
+int issueNumber = myMagazine.getIssueNumber();
+
+Bu metod, derginin sayı olduğunu(mart sayısı,aralık sayısı) döndürür.
+
+Çıktı: "May 2023"
+
+
+2.getPublicationDate Metodu:
+Date publicationDate = magazine.getPublicationDate();
+
+derginin yayın tarihini döndürür.
+
+Çıktı: "01/05/2023"
+
+3.toString Metodu
+String magazineDetails = magazine.toString();
+
+dergi bilgilerini ve uygunluk durumunu içeren bir dize döndürür.
+
+Çıktı: "National Geographic unavailable 01/05/2023 May 2023"
+********************************************************************************
+6. Patron Sınıfı
+
+Nesnee
+Patron patron = new Patron("Tarık", "Yalçın", 16, 08, 2002, "tarik.yalcin@gmail.com");
+
+
+
+Metodlar:
+
+1.getLibraryCardNumber Metodu:
+int libraryCardNumber = patron.getLibraryCardNumber();
+
+Bu metot patrona ait kütüphane kart numarasını döndürür.
+çıktısı sıfır oluyr her yeni eklenen crd number için bir arta arta ilerliyor 0ddan başlayarak
+
+
+2.getEmailAddress Metodu:
+String emailAddress = patron.getEmailAddress();
+
+Bu metod, patrona ait e-posta adresini döndürür.
+
+Çıktı: "tarik.yalcin@gmail.com"
+
+
+3.toString Metodu
+String patronDetails = patron.toString();
+
+Bu metod, patron bilgilerini ve uygunluk durumunu içeren bir dize döndürür.
+
+Çıktı: "Tarık Yalçın 16/08/2002 0 tarik.yalcin@gmail.com"
+********************************************************************************
+Person Sınıfı
+
+Person person = new Person("Ömer", "Seyfettin", 11, 03, 1884);
+
+böyle bir nesne oluşturdum
+
+
+Metodlar:
+1.getFirstName Metodu
+String firstName = person.getFirstName();
+
+kişinin adını döndürür.
+
+Çıktı: "Jane"
+
+
+2.getLastName Metodu:
+String lastName = person.getLastName();
+
+kişinin soyadını döndürür.
+
+Çıktı: "Smith"
+
+
+3.getDateOfBirth Metodu
+Date dateOfBirth = person.getDateOfBirth();
+
+kişinin doğum tarihini döndürür.
+
+Çıktı: "08/03/1988"
+
+
+4.toString Metodu
+String personDetails = person.toString();
+
+kişi bilgilerini içeren bir dize döndürür.
+
+Çıktı: "ömer Seyfettin 11/03/1884"
+
